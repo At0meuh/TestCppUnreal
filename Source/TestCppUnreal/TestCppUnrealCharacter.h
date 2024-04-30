@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ReactToTriggerInterface.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
 #include "TestCppUnrealCharacter.generated.h"
@@ -17,7 +18,7 @@ struct FInputActionValue;
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(config=Game)
-class ATestCppUnrealCharacter : public ACharacter
+class ATestCppUnrealCharacter : public ACharacter, public IReactToTriggerInterface
 {
 	GENERATED_BODY()
 

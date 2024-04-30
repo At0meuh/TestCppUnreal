@@ -172,8 +172,9 @@ void ATestCppUnrealCharacter::Grab(const FInputActionValue& Value)
 
 	if (Hit.bBlockingHit)
 	{
-		
-		PhysicsHandlerComp->GrabComponentAtLocation(Hit.GetActor()->FindComponentByClass<UStaticMeshComponent>(),"None",Hit.Location);
+
+		Hit.GetActor();
+		//PhysicsHandlerComp->GrabComponentAtLocation(Hit.GetActor()->FindComponentByClass<UStaticMeshComponent>(),"None",Hit.Location);
 		
 	}
 }

@@ -26,4 +26,6 @@ public:
 	UFUNCTION(BlueprintCallable,BlueprintNativeEvent)
 	void TestInterfaceCall();
 
+	UFUNCTION(BlueprintCallable,BlueprintNativeEvent)
+	void StartGrab(FVector start, FVector end);
 };
