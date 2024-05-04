@@ -173,7 +173,3 @@ void ATestCppUnrealCharacter::Grab(const FInputActionValue& Value)
 	
 }
 	
-void ATestCppUnrealCharacter::Release(const FInputActionValue& Value)
-{
-	PhysicsHandlerComp->ReleaseComponent();
-}
