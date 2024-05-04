@@ -12,7 +12,6 @@ class USpringArmComponent;
 class UCameraComponent;
 class UInputMappingContext;
 class UInputAction;
-class UPhysicsHandleComponent;
 struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
@@ -68,9 +67,7 @@ protected:
 	
 	void Grab(const FInputActionValue& Value);
 	void Release(const FInputActionValue& Value);
-			
-
-protected:
+	
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	

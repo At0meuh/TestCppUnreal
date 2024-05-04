@@ -27,5 +27,5 @@ public:
 	void TestInterfaceCall();
 
 	UFUNCTION(BlueprintCallable,BlueprintNativeEvent)
-	void StartGrab(FVector start, FVector end);
+	void StartGrab(const AActor& Grabber, FHitResult& Hit);
 };

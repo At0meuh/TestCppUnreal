@@ -115,7 +115,6 @@ void ATestCppUnrealCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ATestCppUnrealCharacter::Look);
 
 		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Started, this, &ATestCppUnrealCharacter::Grab );
-		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Completed, this, &ATestCppUnrealCharacter::Release );
 	}
 	else
 	{
@@ -170,15 +169,10 @@ void ATestCppUnrealCharacter::Grab(const FInputActionValue& Value)
 	GetWorld()->LineTraceSingleByChannel(Hit, TraceStart, TraceEnd, TraceChannelProperty, QueryParams);
 	DrawDebugLine(GetWorld(), TraceStart, TraceEnd, Hit.bBlockingHit ? FColor::Blue : FColor::Red, false, 5.0f, 0, 1.0f);
 
-	if (Hit.bBlockingHit)
-	{
-
-		Hit.GetActor();
-		//PhysicsHandlerComp->GrabComponentAtLocation(Hit.GetActor()->FindComponentByClass<UStaticMeshComponent>(),"None",Hit.Location);
-		
-	}
+	IReactToTriggerInterface::StartGrab(*this,Hit);
+	
 }
-
+	
 void ATestCppUnrealCharacter::Release(const FInputActionValue& Value)
 {
 	PhysicsHandlerComp->ReleaseComponent();
