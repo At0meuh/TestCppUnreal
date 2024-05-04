@@ -7,12 +7,19 @@
 #include "Analytics/RPCDoSDetectionAnalytics.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
 
-void StartGrab(const AActor& Grabber,FHitResult& Hit)
+void IReactToTriggerInterface::StartGrab(const AActor* Grabber, const FHitResult& Hit)
 {
-	
-	if (Hit.bBlockingHit & Hit.GetActor()->FindComponentByClass<UStaticMeshComponent>)
+	UPhysicsHandleComponent*GrabberPhysicsComp = Cast<UPhysicsHandleComponent>(Grabber->GetComponentByClass(UPhysicsHandleComponent::StaticClass()));
+	if (Hit.bBlockingHit && Hit.GetActor()->FindComponentByClass<UStaticMeshComponent>() && GrabberPhysicsComp)
 	{
-		UPhysicsHandleComponent*GrabberPhysicsComp = Cast<UPhysicsHandleComponent>(Grabber.GetComponentByClass(UPhysicsHandleComponent::StaticClass()));
-		GrabberPhysicsComp->GrabComponentAtLocation(Hit.GetActor()->FindComponentByClass<UStaticMeshComponent>,"None",Hit.Location);
+		GrabberPhysicsComp->GrabComponentAtLocation(Hit.GetActor()->FindComponentByClass<UStaticMeshComponent>(),"None",Hit.Location);
 	}
 }
+
+
+
+
+
+
+
+

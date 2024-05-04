@@ -21,14 +21,19 @@ DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 //////////////////////////////////////////////////////////////////////////
 // ATestCppUnrealCharacter
 
+
+void ATestCppUnrealCharacter::StartGrab(const AActor* Grabber, const FHitResult& Hit)
+{
+	IReactToTriggerInterface::StartGrab(Grabber, Hit);
+}
+
 ATestCppUnrealCharacter::ATestCppUnrealCharacter()
 
 
 {
 	// Creation physics handler component
 	PhysicsHandlerComp = CreateDefaultSubobject<UPhysicsHandleComponent>(TEXT("PhysicsComp"));
-	
-	
+
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 		
@@ -169,7 +174,7 @@ void ATestCppUnrealCharacter::Grab(const FInputActionValue& Value)
 	GetWorld()->LineTraceSingleByChannel(Hit, TraceStart, TraceEnd, TraceChannelProperty, QueryParams);
 	DrawDebugLine(GetWorld(), TraceStart, TraceEnd, Hit.bBlockingHit ? FColor::Blue : FColor::Red, false, 5.0f, 0, 1.0f);
 
-	IReactToTriggerInterface::StartGrab(*this,Hit);
+	StartGrab(this,Hit);
 	
 }
 	

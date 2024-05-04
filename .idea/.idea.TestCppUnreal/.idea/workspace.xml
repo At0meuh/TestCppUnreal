@@ -26,13 +26,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Source/TestCppUnreal/Private/ReactToTriggerInterface.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/TestCppUnreal/Public/ReactToTriggerInterface.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/TestCppUnreal/TestCppUnrealCharacter.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/TestCppUnreal/TestCppUnrealCharacter.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/TestCppUnreal/Private/ReactToTriggerInterface.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/TestCppUnreal/Public/ReactToTriggerInterface.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/TestCppUnreal/TestCppUnrealCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/TestCppUnreal/TestCppUnrealCharacter.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -256,6 +256,7 @@
       <workItem from="1714486505939" duration="149000" />
       <workItem from="1714487043848" duration="2386000" />
       <workItem from="1714844776874" duration="6374000" />
+      <workItem from="1714853409915" duration="3937000" />
     </task>
     <servers />
   </component>
