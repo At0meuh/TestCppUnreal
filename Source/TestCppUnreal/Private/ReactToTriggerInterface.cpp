@@ -6,14 +6,19 @@
 #include "KismetTraceUtils.h"
 #include "Analytics/RPCDoSDetectionAnalytics.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
+#include "TestCppUnreal/TestCppUnrealCharacter.h"
 
-void IReactToTriggerInterface::StartGrab(const AActor* Grabber, const FHitResult& Hit)
+
+bool IReactToTriggerInterface::StartGrab(const AActor* Grabber, const FHitResult& Hit)
 {
+	
 	UPhysicsHandleComponent*GrabberPhysicsComp = Cast<UPhysicsHandleComponent>(Grabber->GetComponentByClass(UPhysicsHandleComponent::StaticClass()));
 	if (Hit.bBlockingHit && Hit.GetActor()->FindComponentByClass<UStaticMeshComponent>() && GrabberPhysicsComp)
 	{
 		GrabberPhysicsComp->GrabComponentAtLocation(Hit.GetActor()->FindComponentByClass<UStaticMeshComponent>(),"None",Hit.Location);
+		return true;
 	}
+	return false;
 }
 
 

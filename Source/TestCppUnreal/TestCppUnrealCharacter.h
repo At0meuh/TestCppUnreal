@@ -25,7 +25,9 @@ class ATestCppUnrealCharacter : public ACharacter, public IReactToTriggerInterfa
 	UPROPERTY(VisibleAnywhere)
 	UPhysicsHandleComponent* PhysicsHandlerComp;
 
-	virtual void StartGrab(const AActor* Grabber, const FHitResult& Hit) override;
+	virtual bool StartGrab(const AActor* Grabber, const FHitResult& Hit)override;
+	bool bIsGrabbing = false;
+
 	
 	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -69,7 +71,6 @@ protected:
 	void Look(const FInputActionValue& Value);
 	
 	void Grab(const FInputActionValue& Value);
-	void Release(const FInputActionValue& Value);
 	
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;

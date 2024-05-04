@@ -22,10 +22,6 @@ DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 // ATestCppUnrealCharacter
 
 
-void ATestCppUnrealCharacter::StartGrab(const AActor* Grabber, const FHitResult& Hit)
-{
-	IReactToTriggerInterface::StartGrab(Grabber, Hit);
-}
 
 ATestCppUnrealCharacter::ATestCppUnrealCharacter()
 
@@ -69,6 +65,7 @@ ATestCppUnrealCharacter::ATestCppUnrealCharacter()
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
+
 
 void ATestCppUnrealCharacter::BeginPlay()
 {
@@ -173,8 +170,19 @@ void ATestCppUnrealCharacter::Grab(const FInputActionValue& Value)
 	
 	GetWorld()->LineTraceSingleByChannel(Hit, TraceStart, TraceEnd, TraceChannelProperty, QueryParams);
 	DrawDebugLine(GetWorld(), TraceStart, TraceEnd, Hit.bBlockingHit ? FColor::Blue : FColor::Red, false, 5.0f, 0, 1.0f);
-
-	StartGrab(this,Hit);
-	
+	UE_LOG(LogTemp, Warning, TEXT("bool : %hhd"), bIsGrabbing);
+	if (bIsGrabbing)
+	{		
+		PhysicsHandlerComp->ReleaseComponent();		
+		bIsGrabbing = false;
+	}
+	else
+	{
+		bIsGrabbing = StartGrab(this,Hit);
+	}
 }
-	
+
+bool ATestCppUnrealCharacter::StartGrab(const AActor* Grabber, const FHitResult& Hit)
+{
+	return IReactToTriggerInterface::StartGrab(Grabber, Hit);
+}
