@@ -25,7 +25,7 @@ class ATestCppUnrealCharacter : public ACharacter, public IReactToTriggerInterfa
 	UPROPERTY(VisibleAnywhere)
 	UPhysicsHandleComponent* PhysicsHandlerComp;
 
-	virtual bool StartGrab(const AActor* Grabber, const FHitResult& Hit)override;
+	virtual void StartGrab(const AActor* Grabber, const FHitResult& Hit)override;
 	bool bIsGrabbing = false;
 
 	

@@ -27,6 +27,6 @@ public:
 	void TestInterfaceCall();
 
 	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	virtual bool StartGrab(const AActor* Grabber, const FHitResult& Hit);
+	virtual void StartGrab(const AActor* Grabber, const FHitResult& Hit);
 };
 

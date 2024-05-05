@@ -162,27 +162,26 @@ void ATestCppUnrealCharacter::Look(const FInputActionValue& Value)
 
 void ATestCppUnrealCharacter::Grab(const FInputActionValue& Value)
 {
-	FCollisionQueryParams QueryParams;
-	QueryParams.AddIgnoredActor(this);
-	FVector TraceStart = GetMesh()->GetSocketLocation(FName("head"));
-	FVector TraceEnd = TraceStart +FollowCamera->GetForwardVector() *1000.f;
-	FHitResult Hit;
-	
-	GetWorld()->LineTraceSingleByChannel(Hit, TraceStart, TraceEnd, TraceChannelProperty, QueryParams);
-	DrawDebugLine(GetWorld(), TraceStart, TraceEnd, Hit.bBlockingHit ? FColor::Blue : FColor::Red, false, 5.0f, 0, 1.0f);
-	UE_LOG(LogTemp, Warning, TEXT("bool : %hhd"), bIsGrabbing);
-	if (bIsGrabbing)
-	{		
-		PhysicsHandlerComp->ReleaseComponent();		
-		bIsGrabbing = false;
+	if(PhysicsHandlerComp->GetGrabbedComponent())
+	{
+		PhysicsHandlerComp->ReleaseComponent();
 	}
 	else
 	{
-		bIsGrabbing = StartGrab(this,Hit);
+		FCollisionQueryParams QueryParams;
+		QueryParams.AddIgnoredActor(this);
+		FVector TraceStart = GetMesh()->GetSocketLocation(FName("head"));
+		FVector TraceEnd = TraceStart +FollowCamera->GetForwardVector() *1000.f;
+		FHitResult Hit;
+	
+		GetWorld()->LineTraceSingleByChannel(Hit, TraceStart, TraceEnd, TraceChannelProperty, QueryParams);
+		DrawDebugLine(GetWorld(), TraceStart, TraceEnd, Hit.bBlockingHit ? FColor::Blue : FColor::Red, false, 5.0f, 0, 1.0f);
+		StartGrab(this,Hit);
 	}
+	
 }
 
-bool ATestCppUnrealCharacter::StartGrab(const AActor* Grabber, const FHitResult& Hit)
+void ATestCppUnrealCharacter::StartGrab(const AActor* Grabber, const FHitResult& Hit)
 {
-	return IReactToTriggerInterface::StartGrab(Grabber, Hit);
+	IReactToTriggerInterface::StartGrab(Grabber, Hit);
 }
