@@ -3,6 +3,10 @@
 
 #include "InteractObject.h"
 
+#include "Kismet/GameplayStatics.h"
+#include "TestCppUnreal/TestCppUnrealCharacter.h"
+
+
 // Sets default values
 AInteractObject::AInteractObject()
 {
@@ -18,16 +22,21 @@ AInteractObject::AInteractObject()
 void AInteractObject::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
 void AInteractObject::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if(GetVelocity().Length()>1000)
+	{
+		OnGrabbedObjectDelegate.Broadcast();
+	};
 
 }
- 
+
+
+
 // Blueprint Native Event override implementation
 bool AInteractObject::ReactToTrigger_Implementation() 
 {

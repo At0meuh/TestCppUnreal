@@ -17,6 +17,8 @@ struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
+
+
 UCLASS(config=Game)
 class ATestCppUnrealCharacter : public ACharacter, public IReactToTriggerInterface
 {
@@ -25,7 +27,7 @@ class ATestCppUnrealCharacter : public ACharacter, public IReactToTriggerInterfa
 	UPROPERTY(VisibleAnywhere)
 	UPhysicsHandleComponent* PhysicsHandlerComp;
 
-	virtual void StartGrab(const AActor* Grabber, const FHitResult& Hit)override;
+	virtual void StartGrab( AActor* Grabber, const FHitResult& Hit)override;
 	bool bIsGrabbing = false;
 
 	
@@ -78,6 +80,8 @@ protected:
 	// To add mapping context
 	virtual void BeginPlay();
 
+	
+
 	virtual void Tick(float DeltaSeconds) override;
 	UPROPERTY(EditAnywhere, Category="Collision")
 	TEnumAsByte<ECollisionChannel> TraceChannelProperty = ECC_Pawn;
@@ -88,6 +92,7 @@ public:
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 
-	
+	UFUNCTION()
+	void ReleaseGrab();
 };
 

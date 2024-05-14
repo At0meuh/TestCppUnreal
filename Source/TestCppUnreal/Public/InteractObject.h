@@ -3,7 +3,11 @@
 #include "GameFramework/Actor.h"
 #include "ReactToTriggerInterface.h"
 #include "InteractObject.generated.h"
- 
+
+
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnGrabbedOject);
+
 UCLASS(BlueprintType, Category="MyGame")
 class AInteractObject : public AActor, public IReactToTriggerInterface
 {
@@ -13,11 +17,15 @@ class AInteractObject : public AActor, public IReactToTriggerInterface
 	UStaticMeshComponent* Mesh;
 	
 public:
+
+	FOnGrabbedOject OnGrabbedObjectDelegate;
+	
 	AInteractObject();
 	
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 
+	void CheckVelocity();
 	
 	// Blueprint Native Event override
 	virtual bool ReactToTrigger_Implementation() override;

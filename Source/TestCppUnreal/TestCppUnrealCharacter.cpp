@@ -83,6 +83,12 @@ void ATestCppUnrealCharacter::BeginPlay()
 		}
 	}
 }
+
+void ATestCppUnrealCharacter::ReleaseGrab()
+{
+	//PhysicsHandlerComp->ReleaseComponent();
+}
+
 void ATestCppUnrealCharacter::Tick(float DeltaSeconds)
 {
 	Super ::Tick(DeltaSeconds);
@@ -181,7 +187,7 @@ void ATestCppUnrealCharacter::Grab(const FInputActionValue& Value)
 	
 }
 
-void ATestCppUnrealCharacter::StartGrab(const AActor* Grabber, const FHitResult& Hit)
+void ATestCppUnrealCharacter::StartGrab( AActor* Grabber, const FHitResult& Hit)
 {
 	IReactToTriggerInterface::StartGrab(Grabber, Hit);
 }
