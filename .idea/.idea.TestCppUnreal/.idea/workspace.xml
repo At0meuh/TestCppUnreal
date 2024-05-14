@@ -11,13 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee6fe45c-ab3f-4238-9dac-43ad48139ccc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Source/TestCppUnreal/Private/TriggerBex.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/TestCppUnreal/Public/TriggerBex.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TestCppUnreal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TestCppUnreal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TestCppUnreal/Private/InteractObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TestCppUnreal/Private/InteractObject.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TestCppUnreal/Private/ReactToTriggerInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TestCppUnreal/Private/ReactToTriggerInterface.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/TestCppUnreal/Public/InteractObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TestCppUnreal/Public/InteractObject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TestCppUnreal/Public/ReactToTriggerInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TestCppUnreal/Public/ReactToTriggerInterface.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TestCppUnreal/TestCppUnrealCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TestCppUnreal/TestCppUnrealCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TestCppUnreal/TestCppUnrealCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TestCppUnreal/TestCppUnrealCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +26,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Source/TestCppUnreal/Private/ReactToTriggerInterface.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/TestCppUnreal/Private/TriggerBex.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/TestCppUnreal/Public/ReactToTriggerInterface.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/TestCppUnreal/Public/TriggerBex.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/TestCppUnreal/TestCppUnrealCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/TestCppUnreal/TestCppUnrealCharacter.h" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -41,30 +40,34 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2flohYfUQfI3qJJG48KPmkrw3DN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;D:\\EDUSERVICES\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;D:\\EDUSERVICES\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;D:\\EDUSERVICES\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "D:\\EDUSERVICES\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "D:\\EDUSERVICES\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "D:\\EDUSERVICES\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="C++ Project.TestCppUnreal">
     <configuration name="TestCppUnreal" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -261,7 +264,7 @@
       <workItem from="1714853409915" duration="8200000" />
       <workItem from="1714899780977" duration="3741000" />
       <workItem from="1715690116781" duration="5939000" />
-      <workItem from="1715696264399" duration="366000" />
+      <workItem from="1715696264399" duration="2995000" />
     </task>
     <servers />
   </component>
@@ -270,6 +273,23 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/TestCppUnreal/Public/InteractObject.h</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/TestCppUnreal/TestCppUnrealCharacter.h</url>
+          <line>4</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -25,7 +25,7 @@ public:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 
-	void CheckVelocity();
+	
 	
 	// Blueprint Native Event override
 	virtual bool ReactToTrigger_Implementation() override;
