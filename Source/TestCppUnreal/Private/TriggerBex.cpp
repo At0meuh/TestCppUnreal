@@ -3,6 +3,7 @@
 
 #include "TriggerBex.h"
 #include "Components/BoxComponent.h"
+#include "TestCppUnreal/TestCppUnrealCharacter.h"
 
 // Sets default values
 ATriggerBex::ATriggerBex()
@@ -11,6 +12,7 @@ ATriggerBex::ATriggerBex()
 	PrimaryActorTick.bCanEverTick = true;
 	TriggerBox = CreateDefaultSubobject<UBoxComponent>(TEXT("PoloAsticot"));
 	SetRootComponent(TriggerBox);
+	
 	TriggerBox->OnComponentBeginOverlap.AddDynamic(this,&ATriggerBex::BeginOverlap);
 
 }
@@ -31,5 +33,11 @@ void ATriggerBex::Tick(float DeltaTime)
 
 void ATriggerBex::BeginOverlap(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	UE_LOG(LogTemp,Warning,TEXT("Overlap"));
+	ATestCppUnrealCharacter* OverlapperActor = Cast<ATestCppUnrealCharacter>(OtherActor);
+	if (OverlapperActor)
+	{
+		UE_LOG(LogTemp,Warning,TEXT("ActorOverlap"));
+	}
 }
 
